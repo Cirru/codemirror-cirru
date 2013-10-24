@@ -1,19 +1,70 @@
 
-<script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script>
-<link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css">
+<!-- <script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script> -->
+<script type="text/javascript" src="http://codemirror.net/lib/codemirror.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css"> -->
+<link rel="stylesheet" type="text/css" href="http://codemirror.net/lib/codemirror.css">
 <link rel="stylesheet" type="text/css" href="style/cirru.css">
 
-<textarea id="editor"></textarea>
+<textarea id="editor">echo ==== eval and code
+
+set c $ code
+  print (number 1)
+
+print $ eval c
+
+assert
+  equal (bool right) (bool yes)
+  string "show print this"
+
+set pseudo-func $ code
+  set a $ at parent $ at args $ number 1
+  set b $ at parent $ at args $ number 2
+  add a b
+
+set num-a $ number 3
+set num-b $ number 4
+
+print $ call pseudo-func num-a num-b
+
+pseudo-func num-a num-b
+
+echo ==== testing control flows
+
+set a $ number 1
+set b $ number 2
+set c $ number 1
+
+if (equal a b)
+  echo a equals b
+  echo a not equals b
+
+if (equal a c)
+  echo a is c
+
+if (equal c b)
+  echo b is c
+
+print $ begin
+  print (number 1)
+  string somthing
+  number 0
+
+</textarea>
 
 <script type="text/javascript" src="src/cirru.js"></script>
+<style type="text/css">
+  .CodeMirror {
+    box-shadow: 0 0 10px gray;
+  }
+</style>
 
 <script type="text/javascript">
   var editor = CodeMirror.fromTextArea(document.querySelector("#editor"), {
+    value: "ok",
     mode: "cirru",
     theme: "tomorrow",
     indentUnit: 2,
     tabSize: 2,
-    lineNumbers: true,
-    value: '\ndefine a (read cd)\n  if (> a cd)\n    print "demo"\n    print "not demo"\nsay $ print a\n  save $ b\n    x $ c 8\nprint "fun"'
+    lineNumbers: true
   })
 </script>

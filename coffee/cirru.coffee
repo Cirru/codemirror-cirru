@@ -4,7 +4,9 @@ CodeMirror.defineMode "cirru", ->
   startState: ->
     head: yes
   token: (stream, state) ->
-    console.log stream, state
+    # console.log stream, state
+    if stream.sol()
+      state.head = yes
     if stream.match "$"
       state.head = yes
       "dollar"
@@ -26,9 +28,6 @@ CodeMirror.defineMode "cirru", ->
     else if stream.match ")"
       state.head = no
       "bracket"
-    else if stream.match "\n"
-      console.log "start of line"
-      state.head = yes
     else # if stream.match " "
       stream.next()
       null

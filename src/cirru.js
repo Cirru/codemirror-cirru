@@ -8,7 +8,9 @@
         };
       },
       token: function(stream, state) {
-        console.log(stream, state);
+        if (stream.sol()) {
+          state.head = true;
+        }
         if (stream.match("$")) {
           state.head = true;
           return "dollar";
@@ -32,9 +34,6 @@
         } else if (stream.match(")")) {
           state.head = false;
           return "bracket";
-        } else if (stream.match("\n")) {
-          console.log("start of line");
-          return state.head = true;
         } else {
           stream.next();
           return null;
