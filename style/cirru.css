@@ -1,0 +1,25 @@
+
+.CodeMirror pre {
+    /*font-family: 'Monaco'*/
+}
+
+.cm-string {
+    color: rgb(218, 149, 149);
+    background: rgb(252, 252, 194);
+}
+.cm-word {
+    color: rgb(204, 197, 209);
+}
+.cm-bracket {
+    color: rgb(128, 128, 255);
+}
+.cm-dollar {
+    color: rgb(177, 117, 253);
+}
+.cm-word-func {
+    color: red;
+}
+.cm-string-func {
+    background: rgb(228, 255, 203);
+    color: rgb(172, 172, 172);
+}

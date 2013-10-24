@@ -1,0 +1,24 @@
+{
+  "name": "cirru-mode",
+  "version": "0.0.1",
+  "authors": [
+    "jiyinyiyong <jiyinyiyong@gmail.com>"
+  ],
+  "description": "Cirru mode for CodeMirror",
+  "main": "src/cirru.js",
+  "keywords": [
+    "cirru",
+    "CodeMirror"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "codemirror": "~3.19.0"
+  }
+}
