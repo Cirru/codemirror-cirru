@@ -3,7 +3,8 @@
 <script type="text/javascript" src="http://codemirror.net/lib/codemirror.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css"> -->
 <link rel="stylesheet" type="text/css" href="http://codemirror.net/lib/codemirror.css">
-<link rel="stylesheet" type="text/css" href="style/cirru.css">
+<!-- <link rel="stylesheet" type="text/css" href="bower_components/codemirror/theme/solarized.css"> -->
+<link rel="stylesheet" type="text/css" href="http://codemirror.net/theme/solarized.css">
 
 <textarea id="editor">echo ==== eval and code
 
@@ -53,8 +54,14 @@ print $ begin
 
 <script type="text/javascript" src="src/cirru.js"></script>
 <style type="text/css">
+  body {
+    margin: 0px;
+  }
   .CodeMirror {
-    box-shadow: 0 0 10px gray;
+    box-shadow: 0 0 10px black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
   }
 </style>
 
@@ -62,9 +69,12 @@ print $ begin
   var editor = CodeMirror.fromTextArea(document.querySelector("#editor"), {
     value: "ok",
     mode: "cirru",
-    theme: "tomorrow",
+    theme: "solarized",
     indentUnit: 2,
     tabSize: 2,
-    lineNumbers: true
+    lineNumbers: true,
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    highlightActiveLine: true
   })
 </script>

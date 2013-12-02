@@ -13,20 +13,20 @@
         }
         if (stream.match("$")) {
           state.head = true;
-          return "dollar";
+          return "bracket";
         } else if (stream.match(/^[^\$\"\s\(\)][^\"\s\(\)]*/)) {
           if (state.head) {
             state.head = false;
-            return "word-func";
+            return "keyword";
           } else {
-            return "word";
+            return "variable";
           }
         } else if (stream.match(/^"([^\\\"]|(\\.))*\"/)) {
           if (state.head) {
             state.head = false;
-            return "string-func";
+            return "keyword";
           } else {
-            return "string";
+            return "variable";
           }
         } else if (stream.match("(")) {
           state.head = true;
@@ -43,7 +43,3 @@
   });
 
 }).call(this);
-
-/*
-//@ sourceMappingURL=cirru.map
-*/
