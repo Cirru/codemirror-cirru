@@ -20,5 +20,6 @@
   ],
   "dependencies": {
     "codemirror": "~3.19.0"
-  }
+  },
+  "homepage": "https://github.com/Cirru/cirru-mode"
 }
