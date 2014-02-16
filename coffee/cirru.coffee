@@ -10,6 +10,9 @@ CodeMirror.defineMode "cirru", ->
     if stream.match "$"
       state.head = yes
       "bracket"
+    else if stream.match ','
+      state.head = no
+      'bracket'
     else if stream.match /^[^\$\"\s\(\)][^\"\s\(\)]*/
       if state.head
         state.head = no
