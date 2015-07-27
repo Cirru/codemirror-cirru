@@ -1,5 +1,5 @@
 
-CodeMirror.defineMode "cirru", ->
+module.exports = ->
 
   startState: ->
     head: yes
